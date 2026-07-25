@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portraits — Jayro Montesinos</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-32J19QHKJN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-32J19QHKJN');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--fucsia:#ff0080;--fucsia-dark:#cc0066;--text:#111;--muted:#777;--border:#e8e8e8;--bg2:#f9f9f9;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Montserrat',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#fff;color:var(--text);font-family:var(--serif);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0.8rem 2.5rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(8px);}
+.nav-logo{font-family:var(--sans);font-size:0;text-transform:uppercase;color:var(--text);text-decoration:none;display:flex;align-items:baseline;}
+.logo-j,.logo-m{font-size:1.1rem;font-weight:500;color:var(--fucsia);}
+.logo-ayro,.logo-ontesinos,.logo-space{font-size:0.42rem;letter-spacing:0.18em;color:var(--text);}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-link{font-family:var(--sans);font-size:0.46rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;}
+.nav-link:hover{color:var(--fucsia);}
+.lang-wrap{display:flex;gap:0.3rem;align-items:center;}
+.lang-btn{font-family:var(--sans);font-size:0.44rem;background:none;border:none;cursor:pointer;color:#bbb;transition:color 0.3s;}
+.lang-btn.on{color:var(--fucsia);}
+.lang-sep{color:#ddd;font-size:0.44rem;}
+.page-header{padding:6rem 2.5rem 2.5rem;border-bottom:1px solid var(--border);}
+.eyebrow{font-family:var(--sans);font-size:0.46rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--fucsia);margin-bottom:0.7rem;}
+.page-header h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:300;}
+.page-header h1 em{font-style:italic;color:var(--fucsia);}
+.page-desc{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:0.9rem;margin-top:0.6rem;line-height:1.7;max-width:500px;}
+.gallery-section{padding:3rem 2rem;}
+.masonry{columns:3;column-gap:6px;}
+.masonry-item{break-inside:avoid;margin-bottom:6px;position:relative;overflow:hidden;cursor:pointer;}
+.masonry-item img{width:100%;display:block;transition:transform 0.5s ease;}
+.masonry-item:hover img{transform:scale(1.03);}
+.masonry-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 50%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1rem;}
+.masonry-item:hover .masonry-overlay{opacity:1;}
+.photo-title{font-family:var(--serif);font-size:0.9rem;font-style:italic;color:#fff;}
+.photo-price{font-family:var(--sans);font-size:0.42rem;letter-spacing:0.15em;color:rgba(255,255,255,0.6);margin-top:0.2rem;}
+#lightbox{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;}
+#lightbox.show{display:flex;}
+#lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;}
+#lb-close{position:absolute;top:1.5rem;right:1.5rem;color:rgba(255,255,255,0.5);font-size:2rem;cursor:pointer;background:none;border:none;}
+#lb-close:hover{color:#fff;}
+#lb-prev,#lb-next{position:absolute;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.4);font-size:2rem;cursor:pointer;background:none;border:none;padding:1rem;}
+#lb-prev{left:1rem;}#lb-next{right:1rem;}
+#lb-prev:hover,#lb-next:hover{color:var(--fucsia);}
+footer{background:var(--text);padding:2rem 2.5rem;margin-top:2rem;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.1em;color:rgba(255,255,255,0.18);}
+.footer-copy a{color:var(--fucsia);text-decoration:none;}
+.footer-back{font-family:var(--sans);font-size:0.42rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.3s;}
+.footer-back:hover{color:var(--fucsia);}
+.footer-links{display:flex;gap:1.5rem;}
+.footer-link{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.18);text-decoration:none;transition:color 0.3s;}
+.footer-link:hover{color:var(--fucsia);}
+@media(max-width:768px){nav{padding:0.8rem 1.2rem;}.nav-links{display:none;}.page-header{padding:5rem 1.2rem 2rem;}.gallery-section{padding:2rem 1rem;}.masonry{columns:2;}}
+
+.buy-buttons{display:flex;gap:0.4rem;margin-top:0.5rem;flex-wrap:wrap;}
+.buy-btn{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:var(--fucsia);border:none;padding:0.4rem 0.7rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.2s;}
+.buy-btn:hover{background:var(--fucsia-dark);}
+</style>
+</head>
+<body>
+<div id="lightbox">
+  <button id="lb-close" onclick="closeLB()">×</button>
+  <button id="lb-prev" onclick="moveLB(-1)">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button id="lb-next" onclick="moveLB(1)">›</button>
+</div>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <span class="logo-j">J</span><span class="logo-ayro">ayro</span>
+    <span class="logo-space">&nbsp;</span>
+    <span class="logo-m">M</span><span class="logo-ontesinos">ontesinos</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html#galleries" data-en="Galleries" data-es="Galerías">Galleries</a>
+    <a class="nav-link" href="bio.html" data-en="Bio" data-es="Bio">Bio</a>
+    <a class="nav-link" href="mailto:jayromontesinos@gmail.com" data-en="Contact" data-es="Contacto">Contact</a>
+  </div>
+  <div class="lang-wrap">
+    <button class="lang-btn on" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+</nav>
+<div class="page-header">
+  <p class="eyebrow" data-en="Fine Art · Portraiture" data-es="Fine Art · Retrato">Fine Art · Portraiture</p>
+  <h1 data-en="<em>Portraits</em>" data-es="<em>Retratos</em>"><em>Portraits</em></h1>
+  <p class="page-desc" data-en="Fine art portrait photography. The face as landscape — light, identity and presence." data-es="Fotografía de retrato fine art. El rostro como paisaje — luz, identidad y presencia.">Fine art portrait photography. The face as landscape — light, identity and presence.</p>
+</div>
+<section class="gallery-section">
+  <div class="masonry" id="masonry"></div>
+</section>
+<footer>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 <a href="index.html">Jayro Montesinos</a> · Fine Art Photography · Valencia, Spain</p>
+    <div class="footer-links">
+      <a class="footer-link" href="privacidad.html" data-en="Privacy" data-es="Privacidad">Privacy</a>
+      <a class="footer-link" href="devoluciones.html" data-en="Returns" data-es="Devoluciones">Returns</a>
+      <a class="footer-link" href="aviso-legal.html" data-en="Legal" data-es="Aviso Legal">Legal</a>
+    </div>
+    <a class="footer-back" href="index.html" data-en="← Back to home" data-es="← Volver al inicio">← Back to home</a>
+  </div>
+</footer>
+<script>
+let lang='en',lbIdx=0;
+const photos=[
+  {src:'imagenes/retratos/retrato-01.jpg',title:'Portrait 01',price:'300 €'},
+  {src:'imagenes/retratos/retrato-02.jpg',title:'Portrait 02',price:'300 €'},
+  {src:'imagenes/retratos/retrato-03.jpg',title:'Portrait 03',price:'300 €'},
+  {src:'imagenes/retratos/retrato-04.jpg',title:'Portrait 04',price:'300 €'},
+  {src:'imagenes/retratos/retrato-05.jpg',title:'Portrait 05',price:'300 €'},
+  {src:'imagenes/retratos/retrato-06.jpg',title:'Portrait 06',price:'300 €'},
+  {src:'imagenes/retratos/retrato-07.jpg',title:'Portrait 07',price:'300 €'},
+  {src:'imagenes/retratos/retrato-08.jpg',title:'Portrait 08',price:'300 €'},
+  {src:'imagenes/retratos/retrato-09.jpg',title:'Portrait 09',price:'300 €'},
+  {src:'imagenes/retratos/retrato-10.jpg',title:'Portrait 10',price:'300 €'},
+  {src:'imagenes/retratos/retrato-11.jpg',title:'Portrait 11',price:'300 €'},
+  {src:'imagenes/retratos/retrato-12.jpg',title:'Portrait 12',price:'300 €'},
+  {src:'imagenes/retratos/retrato-13.jpg',title:'Portrait 13',price:'300 €'},
+  {src:'imagenes/retratos/retrato-14.jpg',title:'Portrait 14',price:'300 €'},
+];
+function build(){
+  const m=document.getElementById('masonry');
+  photos.forEach((p,i)=>{
+    const div=document.createElement('div');
+    div.className='masonry-item';
+    div.onclick=()=>openLB(i);
+    const priceHtml=p.price?`<div class="photo-price">${p.price}</div>`:'';
+    div.innerHTML=`<img src="${p.src}" alt="${p.title}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
+    m.appendChild(div);
+  });
+}
+build();
+function openLB(i){lbIdx=i;document.getElementById('lb-img').src=photos[i].src;document.getElementById('lightbox').classList.add('show');}
+function closeLB(){document.getElementById('lightbox').classList.remove('show');}
+function moveLB(d){lbIdx=(lbIdx+d+photos.length)%photos.length;document.getElementById('lb-img').src=photos[lbIdx].src;}
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===document.getElementById('lightbox'))closeLB();});
+function setLang(l){lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('on',b.textContent.toLowerCase()===l));document.querySelectorAll('[data-en]').forEach(el=>{const t=el.getAttribute('data-'+l);if(t)el.innerHTML=t;});}
+</script>
+</body>
+</html>

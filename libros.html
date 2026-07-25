@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books — Jayro Montesinos</title>
+<meta name="description" content="Photography books by Jayro Montesinos. Black & White Photography collection. Available on Amazon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --fucsia:#ff0080;
+  --fucsia-dark:#cc0066;
+  --text:#111;
+  --muted:#777;
+  --border:#e8e8e8;
+  --bg2:#f9f9f9;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Montserrat',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{background:#fff;color:var(--text);font-family:var(--serif);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0.8rem 2.5rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(8px);}
+.nav-logo{font-family:var(--sans);font-size:0;text-transform:uppercase;color:var(--text);text-decoration:none;display:flex;align-items:baseline;}
+.logo-j,.logo-m{font-size:1.1rem;font-weight:500;color:var(--fucsia);}
+.logo-ayro,.logo-ontesinos,.logo-space{font-size:0.42rem;letter-spacing:0.18em;color:var(--text);}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-link{font-family:var(--sans);font-size:0.46rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;}
+.nav-link:hover{color:var(--fucsia);}
+.lang-wrap{display:flex;gap:0.3rem;align-items:center;}
+.lang-btn{font-family:var(--sans);font-size:0.44rem;letter-spacing:0.12em;background:none;border:none;cursor:pointer;color:#bbb;transition:color 0.3s;}
+.lang-btn.on{color:var(--fucsia);}
+.lang-sep{color:#ddd;font-size:0.44rem;}
+
+/* HEADER */
+.page-header{padding:7rem 2.5rem 3rem;border-bottom:1px solid var(--border);}
+.eyebrow{font-family:var(--sans);font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--fucsia);margin-bottom:0.7rem;}
+.page-header h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:300;}
+.page-header h1 em{font-style:italic;color:var(--fucsia);}
+.page-desc{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:0.92rem;margin-top:0.7rem;line-height:1.7;max-width:500px;}
+
+/* BOOKS GRID */
+.books-section{padding:4rem 2.5rem;}
+.books-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem 2rem;}
+
+.book-item{display:flex;flex-direction:column;gap:1rem;cursor:pointer;}
+.book-cover{position:relative;overflow:hidden;aspect-ratio:1/1;background:var(--bg2);}
+.book-cover img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;display:block;}
+.book-item:hover .book-cover img{transform:scale(1.04);}
+.book-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);transition:background 0.3s;display:flex;align-items:center;justify-content:center;}
+.book-item:hover .book-overlay{background:rgba(0,0,0,0.35);}
+.book-btn{font-family:var(--sans);font-size:0.48rem;letter-spacing:0.2em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.7);padding:0.6rem 1.2rem;opacity:0;transition:all 0.3s;text-decoration:none;background:transparent;}
+.book-item:hover .book-btn{opacity:1;}
+.book-btn:hover{background:var(--fucsia);border-color:var(--fucsia);}
+
+.book-info{}
+.book-num{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.18em;color:var(--muted);margin-bottom:0.25rem;}
+.book-title{font-family:var(--serif);font-size:1.3rem;font-style:italic;font-weight:400;line-height:1.1;}
+.book-subtitle{font-family:var(--sans);font-size:0.42rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:0.3rem;}
+.book-author{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.15em;color:var(--fucsia);margin-top:0.4rem;text-transform:uppercase;}
+
+/* AMAZON STRIP */
+.amazon-strip{background:var(--text);padding:4rem 2.5rem;text-align:center;margin-top:2rem;}
+.amazon-eyebrow{font-family:var(--sans);font-size:0.46rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--fucsia);margin-bottom:0.7rem;}
+.amazon-title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:300;color:#fff;font-style:italic;}
+.amazon-desc{font-family:var(--serif);font-style:italic;color:rgba(255,255,255,0.4);font-size:0.88rem;margin-top:0.5rem;line-height:1.7;}
+.btn-amazon{font-family:var(--sans);font-size:0.5rem;letter-spacing:0.22em;text-transform:uppercase;color:#fff;background:var(--fucsia);border:none;padding:0.9rem 2.5rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.3s;margin-top:1.5rem;}
+.btn-amazon:hover{background:var(--fucsia-dark);}
+
+/* FOOTER */
+footer{background:var(--text);padding:2rem 2.5rem;border-top:1px solid rgba(255,255,255,0.07);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.1em;color:rgba(255,255,255,0.18);}
+.footer-copy a{color:var(--fucsia);text-decoration:none;}
+.footer-back{font-family:var(--sans);font-size:0.42rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.3s;}
+.footer-back:hover{color:var(--fucsia);}
+
+@media(max-width:768px){
+  nav{padding:0.8rem 1.2rem;}
+  .nav-links{display:none;}
+  .page-header{padding:5rem 1.2rem 2rem;}
+  .books-section{padding:2.5rem 1.2rem;}
+  .books-grid{grid-template-columns:repeat(2,1fr);gap:2rem 1rem;}
+  footer{padding:1.5rem 1.2rem;}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-32J19QHKJN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-32J19QHKJN');
+</script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <span class="logo-j">J</span><span class="logo-ayro">ayro</span>
+    <span class="logo-space">&nbsp;</span>
+    <span class="logo-m">M</span><span class="logo-ontesinos">ontesinos</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html#galleries" data-en="Galleries" data-es="Galerías">Galleries</a>
+    <a class="nav-link" href="bio.html" data-en="Bio" data-es="Bio">Bio</a>
+    <a class="nav-link" href="mailto:info@jayromontesinos.com" data-en="Contact" data-es="Contacto">Contact</a>
+  </div>
+  <div class="lang-wrap">
+    <button class="lang-btn on" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <p class="eyebrow" data-en="Publications" data-es="Publicaciones">Publications</p>
+  <h1 data-en="<em>Books</em>" data-es="<em>Libros</em>"><em>Books</em></h1>
+  <p class="page-desc" data-en="A collection of fine art photography books. Black & White series — available on Amazon worldwide." data-es="Una colección de libros de fotografía fine art. Serie Blanco & Negro — disponibles en Amazon en todo el mundo.">A collection of fine art photography books. Black & White series — available on Amazon worldwide.</p>
+</div>
+
+<section class="books-section">
+  <div class="books-grid" id="books-grid"></div>
+</section>
+
+<div class="amazon-strip">
+  <p class="amazon-eyebrow" data-en="Available worldwide" data-es="Disponibles en todo el mundo">Available worldwide</p>
+  <h2 class="amazon-title" data-en="Find all books on <em>Amazon</em>" data-es="Encuentra todos los libros en <em>Amazon</em>">Find all books on <em>Amazon</em></h2>
+  <p class="amazon-desc" data-en="Paperback & hardcover editions. International shipping. Signed copies available on request." data-es="Ediciones en tapa blanda y dura. Envío internacional. Copias firmadas disponibles bajo petición.">Paperback & hardcover editions. International shipping. Signed copies available on request.</p>
+  <a class="btn-amazon" href="https://www.amazon.com/s?k=jayro+montesinos" target="_blank" rel="noopener" data-en="View on Amazon" data-es="Ver en Amazon">View on Amazon</a>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 <a href="index.html">Jayro Montesinos</a> · Fine Art Photography · Valencia, Spain</p>
+    <a class="footer-back" href="index.html" data-en="← Back to home" data-es="← Volver al inicio">← Back to home</a>
+  </div>
+</footer>
+
+<script>
+let lang = 'en';
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('on', b.textContent.toLowerCase() === l));
+  document.querySelectorAll('[data-en]').forEach(el => { const t = el.getAttribute('data-' + l); if (t) el.innerHTML = t; });
+}
+
+const books = [
+  {img: "imagenes/libros/libro-01.jpg", title: "Angkor", subtitle: "Templos de Camboya · Fine Art Photography", amazon: "https://www.amazon.com/dp/B0D3TGM8B9"},
+  {img: "imagenes/libros/libro-02.jpg", title: "Thailand", subtitle: "Fine Art Photography", amazon: "https://www.amazon.com/dp/B0D36B39X7"},
+  {img: "imagenes/libros/libro-03.jpg", title: "Still Life Photography", subtitle: "Flowers, Fruits and Marines", amazon: "https://www.amazon.com/dp/B0CWXVQ38K"},
+  {img: "imagenes/libros/libro-04.jpg", title: "Aquatic Bloom", subtitle: "Fine Art Photography", amazon: "https://www.amazon.com/dp/B0D3VL5PXN"},
+  {img: "imagenes/libros/libro-06.jpg", title: "Seashells", subtitle: "Masterpieces of Hidden Nature", amazon: "https://www.amazon.com/dp/B0H61JN1CJ"},
+  {img: "imagenes/libros/libro-07.jpg", title: "Inner Journey", subtitle: "Fine Art · Limited Edition · Blurb", amazon: "https://www.blurb.es/b/12925682"},
+];
+
+function buildGrid() {
+  const grid = document.getElementById('books-grid');
+  books.forEach((book, i) => {
+    const div = document.createElement('div');
+    div.className = 'book-item';
+    div.innerHTML = `
+      <div class="book-cover">
+        <img src="${book.img}" alt="${book.title} - Jayro Montesinos" loading="lazy">
+        <div class="book-overlay">
+          <a class="book-btn" href="${book.amazon}" target="_blank" rel="noopener" data-en="View on Amazon" data-es="Ver en Amazon">View on Amazon</a>
+        </div>
+      </div>
+      <div class="book-info">
+        <div class="book-num">0${i+1} / 0${books.length}</div>
+        <div class="book-title">${book.title}</div>
+        <div class="book-subtitle">${book.subtitle}</div>
+        <div class="book-author">Jayro Montesinos</div>
+      </div>`;
+    grid.appendChild(div);
+  });
+}
+buildGrid();
+</script>
+</body>
+</html>

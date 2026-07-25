@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio — Jayro Montesinos</title>
+<meta name="description" content="Biography of Jayro Montesinos, fine art photographer based in Valencia, Spain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--fucsia:#ff0080;--fucsia-dark:#cc0066;--text:#111;--muted:#777;--border:#e8e8e8;--bg2:#f9f9f9;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Montserrat',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#fff;color:var(--text);font-family:var(--serif);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0.8rem 2.5rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(8px);}
+.nav-logo{font-family:var(--sans);font-size:0;text-transform:uppercase;color:var(--text);text-decoration:none;display:flex;align-items:baseline;}
+.logo-j,.logo-m{font-size:1.1rem;font-weight:500;color:var(--fucsia);}
+.logo-ayro,.logo-ontesinos,.logo-space{font-size:0.42rem;letter-spacing:0.18em;color:var(--text);}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-link{font-family:var(--sans);font-size:0.46rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;}
+.nav-link:hover{color:var(--fucsia);}
+.lang-wrap{display:flex;gap:0.3rem;align-items:center;}
+.lang-btn{font-family:var(--sans);font-size:0.44rem;background:none;border:none;cursor:pointer;color:#bbb;transition:color 0.3s;}
+.lang-btn.on{color:var(--fucsia);}
+.lang-sep{color:#ddd;font-size:0.44rem;}
+.bio-hero{margin-top:60px;display:grid;grid-template-columns:1fr 1fr;min-height:85vh;}
+.bio-photo{position:relative;overflow:hidden;}
+.bio-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+
+.bio-intro{padding:4rem 3rem;display:flex;flex-direction:column;justify-content:center;}
+.eyebrow{font-family:var(--sans);font-size:0.46rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--fucsia);margin-bottom:0.8rem;}
+.bio-name{font-family:var(--serif);font-size:clamp(2.5rem,4vw,4rem);font-weight:300;line-height:1;}
+.bio-name em{font-style:italic;color:var(--fucsia);display:block;}
+.bio-tagline{font-family:var(--sans);font-size:0.44rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-top:0.8rem;}
+.bio-cities{display:flex;gap:1.2rem;margin-top:1.5rem;flex-wrap:wrap;}
+.city{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);border-left:2px solid var(--fucsia);padding-left:0.5rem;}
+.bio-text-section{padding:5rem 2.5rem;max-width:900px;margin:0 auto;}
+.bio-text-section p{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--text);line-height:1.9;margin-bottom:1.5rem;}
+.bio-divider{width:40px;height:1px;background:var(--fucsia);margin:2rem 0;}
+.spec-section{background:var(--bg2);padding:4rem 2.5rem;}
+.spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:900px;margin:2rem auto 0;}
+.spec-item{text-align:center;}
+.spec-num{font-family:var(--serif);font-size:2rem;color:var(--fucsia);font-style:italic;}
+.spec-label{font-family:var(--sans);font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:0.3rem;} a.spec-item:hover .spec-num{color:var(--fucsia-dark);} a.spec-item:hover .spec-label{color:var(--fucsia);}
+.section-title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:300;text-align:center;}
+.section-title em{font-style:italic;color:var(--fucsia);}
+.contact-strip{background:var(--text);padding:4rem 2.5rem;text-align:center;}
+.contact-title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:300;color:#fff;font-style:italic;margin-bottom:0.5rem;}
+.contact-desc{font-family:var(--serif);font-style:italic;color:rgba(255,255,255,0.4);font-size:0.88rem;line-height:1.7;margin-bottom:1.5rem;}
+.btn-fucsia{font-family:var(--sans);font-size:0.5rem;letter-spacing:0.22em;text-transform:uppercase;color:#fff;background:var(--fucsia);border:none;padding:0.9rem 2.5rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.3s;}
+.btn-fucsia:hover{background:var(--fucsia-dark);}
+footer{background:var(--text);padding:2rem 2.5rem;border-top:1px solid rgba(255,255,255,0.07);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.1em;color:rgba(255,255,255,0.18);}
+.footer-copy a{color:var(--fucsia);text-decoration:none;}
+.footer-back{font-family:var(--sans);font-size:0.42rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.3s;}
+.footer-back:hover{color:var(--fucsia);}
+@media(max-width:768px){
+  nav{padding:0.8rem 1.2rem;}
+  .nav-links{display:none;}
+  .bio-hero{grid-template-columns:1fr;min-height:auto;}
+  .bio-photo{height:70vw;}
+  
+  .bio-intro{padding:2rem 1.2rem;}
+  .bio-text-section{padding:3rem 1.2rem;}
+  .spec-section{padding:3rem 1.2rem;}
+  .spec-grid{grid-template-columns:repeat(2,1fr);}
+  .contact-strip{padding:3rem 1.2rem;}
+  footer{padding:1.5rem 1.2rem;}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-32J19QHKJN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-32J19QHKJN');
+</script>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <span class="logo-j">J</span><span class="logo-ayro">ayro</span>
+    <span class="logo-space">&nbsp;</span>
+    <span class="logo-m">M</span><span class="logo-ontesinos">ontesinos</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html#galleries" data-en="Galleries" data-es="Galerías">Galleries</a>
+    <a class="nav-link" href="libros.html" data-en="Books" data-es="Libros">Books</a>
+    <a class="nav-link" href="mailto:jayromontesinos@gmail.com" data-en="Contact" data-es="Contacto">Contact</a>
+  </div>
+  <div class="lang-wrap">
+    <button class="lang-btn on" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+</nav>
+
+<div class="bio-hero">
+  <div class="bio-photo">
+    <img src="imagenes/bio/jayro-bio.jpg" alt="Jayro Montesinos">
+    
+  </div>
+  <div class="bio-intro">
+    <p class="eyebrow" data-en="Fine Art Photographer" data-es="Fotógrafo Fine Art">Fine Art Photographer</p>
+    <h1 class="bio-name">Jayro <em>Montesinos</em></h1>
+    <p class="bio-tagline" data-en="Madrid · San Francisco · Lisbon · Piraeus · Valencia" data-es="Madrid · San Francisco · Lisboa · El Pireo · Valencia">Madrid · San Francisco · Lisbon · Piraeus · Valencia</p>
+    <div class="bio-cities">
+      <div class="city" data-en="Fine Art" data-es="Fine Art">Fine Art</div>
+      <div class="city" data-en="Nude" data-es="Desnudo">Nude</div>
+      <div class="city" data-en="Dance" data-es="Danza">Dance</div>
+      <div class="city" data-en="Estudio Mediterráneo" data-es="Estudio Mediterráneo">Estudio Mediterráneo</div>
+    </div>
+  </div>
+</div>
+
+<div class="bio-text-section">
+  <p data-en="Jayro Montesinos is a fine art photographer based in Valencia, Spain, specializing in contemporary author photography with a focus on male nude art, LGTBI photography, portraiture, dance, and still life. His work explores identity, the human body, light, and composition through a minimalist, understated, and contemporary aesthetic." data-es="Jayro Montesinos es fotógrafo fine art afincado en Valencia, España, especializado en fotografía de autor contemporánea con foco en desnudo artístico masculino, fotografía LGTBI, retrato, danza y naturaleza muerta. Su obra explora la identidad, el cuerpo humano, la luz y la composición a través de una estética minimalista, contenida y contemporánea.">Jayro Montesinos is a fine art photographer based in Valencia, Spain, specializing in contemporary author photography with a focus on male nude art, LGTBI photography, portraiture, dance, and still life. His work explores identity, the human body, light, and composition through a minimalist, understated, and contemporary aesthetic.</p>
+  <div class="bio-divider"></div>
+  <p data-en="He began his career in the LGTBI editorial environment in Spain, working as an assistant at Zero magazine during a key period for LGTBI visibility and legal rights in the country. He holds a degree in Political Science from the Complutense University of Madrid, a background that brings a sociopolitical and analytical layer to his artistic vision." data-es="Comenzó su carrera en el entorno editorial LGTBI en España, trabajando como asistente en la revista Zero durante un período clave para la visibilidad y los derechos LGTBI en el país. Es licenciado en Ciencias Políticas por la Universidad Complutense de Madrid, formación que aporta una capa sociopolítica y analítica a su visión artística.">He began his career in the LGTBI editorial environment in Spain, working as an assistant at Zero magazine during a key period for LGTBI visibility and legal rights in the country. He holds a degree in Political Science from the Complutense University of Madrid, a background that brings a sociopolitical and analytical layer to his artistic vision.</p>
+  <div class="bio-divider"></div>
+  <p data-en="His life and international trajectory have been shaped by extended periods living in the United States (San Francisco), Portugal, and Greece (Piraeus), experiences that have directly influenced his aesthetic vision, cultural sensitivity, and development as a contemporary photographer." data-es="Su trayectoria internacional ha estado marcada por largas etapas vividas en Estados Unidos (San Francisco), Portugal y Grecia (El Pireo), experiencias que han influido directamente en su visión estética, sensibilidad cultural y desarrollo como fotógrafo contemporáneo.">His life and international trajectory have been shaped by extended periods living in the United States (San Francisco), Portugal, and Greece (Piraeus), experiences that have directly influenced his aesthetic vision, cultural sensitivity, and development as a contemporary photographer.</p>
+  <div class="bio-divider"></div>
+  <p data-en="His work has been published in photography and art magazines in both the United States and Spain, including Arte Fotográfico. He has held a solo exhibition at the LGTBI Visible Festival and has participated in group exhibitions in New York within the context of the Leslie-Lohman Museum of Art. His work is part of private collections of fine art photography collectors, with a strong focus on male nude artistic photography and limited edition works." data-es="Su obra ha sido publicada en revistas de fotografía y arte en Estados Unidos y España, incluyendo Arte Fotográfico. Ha realizado una exposición individual en el Festival LGTBI Visible y ha participado en exposiciones colectivas en Nueva York en el contexto del Leslie-Lohman Museum of Art. Su obra forma parte de colecciones privadas de coleccionistas de fotografía fine art, con especial foco en desnudo artístico masculino y obras en edición limitada.">His work has been published in photography and art magazines in both the United States and Spain, including Arte Fotográfico. He has held a solo exhibition at the LGTBI Visible Festival and has participated in group exhibitions in New York within the context of the Leslie-Lohman Museum of Art. His work is part of private collections of fine art photography collectors, with a strong focus on male nude artistic photography and limited edition works.</p>
+  <div class="bio-divider"></div>
+  <p data-en="He is currently developing a new series of male nude fine art photography books in limited editions, aimed at collectors and the international contemporary art market. In parallel, he is working on editorial series such as Light and Shadow, Symmetry, People, Landscape and Still Life — black and white photography currently in development for future publication." data-es="Actualmente desarrolla una nueva serie de libros de fotografía fine art de desnudo masculino en ediciones limitadas, dirigidos a coleccionistas y al mercado internacional del arte contemporáneo. En paralelo, trabaja en series editoriales como Luz y Sombra, Simetría, Personas, Paisaje y Naturaleza Muerta — fotografía en blanco y negro actualmente en desarrollo para publicación futura.">He is currently developing a new series of male nude fine art photography books in limited editions, aimed at collectors and the international contemporary art market. In parallel, he is working on editorial series such as Light and Shadow, Symmetry, People, Landscape and Still Life — black and white photography currently in development for future publication.</p>
+  <div class="bio-divider"></div>
+  <p data-en="Limited edition fine art prints available. Private studio by appointment in Valencia, Spain." data-es="Impresiones fine art en edición limitada disponibles. Estudio privado con cita previa en Valencia, España.">Limited edition fine art prints available. Private studio by appointment in Valencia, Spain.</p>
+</div>
+
+<div class="spec-section">
+  <h2 class="section-title" data-en="Areas of <em>Work</em>" data-es="Áreas de <em>Trabajo</em>">Areas of <em>Work</em></h2>
+  <div class="spec-grid">
+    <a class="spec-item" href="desnudo-artistico.html" style="text-decoration:none;"><div class="spec-num">I</div><div class="spec-label" data-en="Fine Art Nude" data-es="Desnudo Artístico">Fine Art Nude</div></a>
+    <a class="spec-item" href="danza.html" style="text-decoration:none;"><div class="spec-num">II</div><div class="spec-label" data-en="Dance" data-es="Danza">Dance</div></a>
+    <a class="spec-item" href="campanas.html" style="text-decoration:none;"><div class="spec-num">III</div><div class="spec-label" data-en="Estudio Mediterráneo" data-es="Estudio Mediterráneo">Estudio Mediterráneo</div></a>
+    <a class="spec-item" href="libros.html" style="text-decoration:none;"><div class="spec-num">IV</div><div class="spec-label" data-en="Books" data-es="Libros">Books</div></a>
+  </div>
+</div>
+
+<div class="contact-strip">
+  <h2 class="contact-title" data-en="Work together" data-es="Trabajemos juntos">Work together</h2>
+  <p class="contact-desc" data-en="Private studio in Valencia. Available for campaigns, editorial and fine art projects." data-es="Estudio privado en Valencia. Disponible para campañas, editorial y proyectos fine art.">Private studio in Valencia. Available for campaigns, editorial and fine art projects.</p>
+  <a class="btn-fucsia" href="mailto:jayromontesinos@gmail.com" data-en="Get in touch" data-es="Contactar">Get in touch</a>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 <a href="index.html">Jayro Montesinos</a> · Fine Art Photography · Valencia, Spain</p>
+    <a class="footer-back" href="index.html" data-en="← Back to home" data-es="← Volver al inicio">← Back to home</a>
+  </div>
+</footer>
+
+<script>
+let lang = 'en';
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('on', b.textContent.toLowerCase() === l));
+  document.querySelectorAll('[data-en]').forEach(el => { const t = el.getAttribute('data-' + l); if (t) el.innerHTML = t; });
+}
+</script>
+</body>
+</html>

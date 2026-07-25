@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jayro Montesinos — Fine Art Photography · Valencia, Spain</title>
+<meta name="description" content="Jayro Montesinos — Fine art photographer based in Valencia, Spain. Artistic nude, campaigns, dance, books and biography. Limited edition prints on Hahnemühle paper.">
+<meta name="keywords" content="Jayro Montesinos, fine art photography, Valencia, artistic nude, photographer Spain, limited edition prints">
+<meta name="author" content="Jayro Montesinos">
+<meta property="og:title" content="Jayro Montesinos — Fine Art Photography">
+<meta property="og:description" content="Fine art photographer based in Valencia, Spain. Limited edition prints.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --fucsia:#ff0080;
+  --fucsia-dark:#cc0066;
+  --text:#111;
+  --muted:#777;
+  --border:#e8e8e8;
+  --bg2:#f9f9f9;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Montserrat',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{background:#fff;color:var(--text);font-family:var(--serif);overflow-x:hidden;}
+
+/* NEWSLETTER POPUP */
+#nl-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.5s;}
+#nl-overlay.show{opacity:1;pointer-events:all;}
+.nl-box{background:#fff;max-width:460px;width:100%;position:relative;overflow:hidden;transform:translateY(24px);transition:transform 0.5s;}
+#nl-overlay.show .nl-box{transform:translateY(0);}
+.nl-top{background:var(--text);padding:2rem 2rem 1.5rem;text-align:center;}
+.nl-eyebrow{font-family:var(--sans);font-size:0.46rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--fucsia);margin-bottom:0.7rem;}
+.nl-title{font-family:var(--serif);font-size:1.9rem;font-weight:300;color:#fff;line-height:1.2;}
+.nl-title em{font-style:italic;color:var(--fucsia);}
+.nl-body{padding:1.6rem 2rem;}
+.nl-desc{font-family:var(--serif);font-size:0.88rem;font-style:italic;color:var(--muted);line-height:1.7;margin-bottom:1.2rem;text-align:center;}
+.nl-form{display:flex;flex-direction:column;gap:0.55rem;}
+.nl-form input{background:var(--bg2);border:1px solid var(--border);padding:0.7rem 1rem;font-family:var(--sans);font-size:0.57rem;outline:none;transition:border-color 0.3s;}
+.nl-form input:focus{border-color:var(--fucsia);}
+.nl-form input::placeholder{color:#bbb;}
+.btn-nl{font-family:var(--sans);font-size:0.5rem;letter-spacing:0.25em;text-transform:uppercase;color:#fff;background:var(--fucsia);border:none;padding:0.9rem;cursor:pointer;transition:background 0.3s;width:100%;}
+.btn-nl:hover{background:var(--fucsia-dark);}
+.nl-skip{display:block;text-align:center;margin-top:0.7rem;font-family:var(--sans);font-size:0.46rem;letter-spacing:0.1em;color:#ccc;cursor:pointer;transition:color 0.3s;}
+.nl-skip:hover{color:var(--muted);}
+.nl-close{position:absolute;top:0.8rem;right:0.9rem;background:none;border:none;color:rgba(255,255,255,0.35);font-size:1.2rem;cursor:pointer;transition:color 0.3s;z-index:1;}
+.nl-close:hover{color:#fff;}
+.nl-ok{font-family:var(--sans);font-size:0.5rem;color:var(--fucsia);text-align:center;padding:0.5rem;display:none;margin-top:0.4rem;} .nl-input-ml{background:var(--bg2);border:1px solid var(--border);padding:0.7rem 1rem;font-family:var(--sans);font-size:0.57rem;outline:none;transition:border-color 0.3s;width:100%;margin-bottom:0.6rem;} .nl-input-ml:focus{border-color:var(--fucsia);} .ml-embedded-wrap{width:100%;}
+.nl-ok.show{display:block;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;transition:background 0.4s,border-color 0.4s,padding 0.4s;border-bottom:1px solid transparent;}
+nav.scrolled{background:rgba(255,255,255,0.97);border-bottom-color:var(--border);backdrop-filter:blur(8px);padding:0.8rem 2.5rem;}
+.nav-logo{font-family:var(--sans);font-size:0;letter-spacing:0;text-transform:uppercase;color:#fff;text-decoration:none;transition:color 0.4s;display:flex;align-items:baseline;gap:0;}
+nav.scrolled .nav-logo{color:var(--text);}
+/* Iniciales J y M grandes, resto pequeño */
+.logo-j,.logo-m{font-size:1.1rem;font-weight:500;letter-spacing:0.05em;line-height:1;}
+.logo-ayro,.logo-ontesinos{font-size:0.42rem;font-weight:300;letter-spacing:0.18em;}
+.logo-space{font-size:0.42rem;letter-spacing:0.1em;}
+.logo-j,.logo-m{color:#fff;transition:color 0.4s;}
+nav.scrolled .logo-j,nav.scrolled .logo-m{color:var(--fucsia);}
+.logo-ayro,.logo-ontesinos,.logo-space{color:rgba(255,255,255,0.75);transition:color 0.4s;}
+nav.scrolled .logo-ayro,nav.scrolled .logo-ontesinos,nav.scrolled .logo-space{color:var(--text);}
+
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-link{font-family:var(--sans);font-size:0.46rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.3s;}
+nav.scrolled .nav-link{color:var(--muted);}
+.nav-link:hover{color:var(--fucsia);}
+.lang-wrap{display:flex;gap:0.3rem;align-items:center;}
+.lang-btn{font-family:var(--sans);font-size:0.44rem;letter-spacing:0.12em;background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.35);transition:color 0.3s;}
+nav.scrolled .lang-btn{color:#bbb;}
+.lang-btn.on{color:var(--fucsia);}
+.lang-sep{color:rgba(255,255,255,0.18);font-size:0.44rem;}
+nav.scrolled .lang-sep{color:#ddd;}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:#1a1a1a;}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:0.75;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.25) 55%,rgba(0,0,0,0.15) 100%);}
+.hero-content{position:relative;z-index:2;padding:3rem 2.5rem 4.5rem;max-width:700px;}
+.hero-eyebrow{font-family:var(--sans);font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--fucsia);margin-bottom:1rem;opacity:0;animation:fadeUp 0.8s 0.3s forwards;}
+.hero-name{font-family:var(--serif);font-size:clamp(3rem,7vw,6rem);font-weight:300;color:#fff;line-height:1;margin-bottom:0.3rem;opacity:0;animation:fadeUp 0.8s 0.5s forwards;}
+.hero-name em{font-style:italic;display:block;}
+.hero-sub{font-family:var(--serif);font-size:clamp(0.85rem,1.5vw,1rem);font-style:italic;color:rgba(255,255,255,0.5);margin-top:1rem;line-height:1.7;opacity:0;animation:fadeUp 0.8s 0.7s forwards;}
+.hero-cta{margin-top:2rem;opacity:0;animation:fadeUp 0.8s 0.9s forwards;}
+.btn-hero{font-family:var(--sans);font-size:0.48rem;letter-spacing:0.25em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.35);padding:0.8rem 2rem;text-decoration:none;display:inline-block;transition:all 0.3s;}
+.btn-hero:hover{border-color:var(--fucsia);background:var(--fucsia);}
+.hero-scroll{position:absolute;bottom:2rem;right:2.5rem;z-index:2;display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0;animation:fadeIn 1s 1.2s forwards;}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.35));}
+.scroll-txt{font-family:var(--sans);font-size:0.38rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.25);}
+
+/* GALLERIES */
+.galleries-section{padding:5rem 2.5rem;}
+.section-header{text-align:center;margin-bottom:3.5rem;}
+.section-eyebrow{font-family:var(--sans);font-size:0.46rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--fucsia);margin-bottom:0.7rem;}
+.section-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;}
+.section-title em{font-style:italic;color:var(--fucsia);}
+.section-desc{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:0.88rem;margin-top:0.5rem;line-height:1.7;}
+
+/* 5 cards: top row 3, bottom row 2 centered */
+.gallery-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.gallery-card{position:relative;overflow:hidden;cursor:pointer;text-decoration:none;display:block;aspect-ratio:3/4;}
+/* Last 2 cards centered */
+
+
+.card-bg{position:absolute;inset:0;transition:transform 0.6s ease;}
+.gallery-card:nth-child(1) .card-bg{background:#d8d8d8;}
+.gallery-card:nth-child(2) .card-bg{background:#d8d8d8;}
+.gallery-card:nth-child(3) .card-bg{background:#d8d8d8;}
+.gallery-card:nth-child(4) .card-bg{background:#d8d8d8;}
+.gallery-card:nth-child(5) .card-bg{background:#d8d8d8;}
+.card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;opacity:0.82;}
+.gallery-card:hover .card-bg,
+.gallery-card:hover .card-img{transform:scale(1.05);}
+.card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.08) 60%);transition:background 0.3s;}
+.gallery-card:hover .card-overlay{background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.18) 60%);}
+.card-content{position:absolute;bottom:0;left:0;right:0;padding:1.6rem 1.4rem;}
+.card-num{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.2em;color:rgba(255,255,255,0.3);margin-bottom:0.35rem;}
+.card-title{font-family:var(--serif);font-size:clamp(1.1rem,2.2vw,1.7rem);font-weight:300;color:#fff;font-style:italic;line-height:1.1;}
+.card-sub{font-family:var(--sans);font-size:0.42rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:0.35rem;}
+.card-arrow{position:absolute;bottom:1.6rem;right:1.4rem;width:30px;height:30px;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;transition:all 0.3s;}
+.gallery-card:hover .card-arrow{border-color:var(--fucsia);background:var(--fucsia);}
+.card-arrow svg{width:11px;height:11px;fill:none;stroke:#fff;stroke-width:1.5;transition:transform 0.3s;}
+.gallery-card:hover .card-arrow svg{transform:translate(2px,-2px);}
+.adult-badge{position:absolute;top:0.9rem;right:0.9rem;background:rgba(255,0,128,0.12);border:1px solid rgba(255,0,128,0.35);font-family:var(--sans);font-size:0.38rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--fucsia);padding:0.25rem 0.55rem;}
+
+/* ABOUT */
+.about-strip{background:var(--text);padding:5rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.about-quote{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.9rem);font-weight:300;font-style:italic;color:#fff;line-height:1.55;}
+.about-quote span{color:var(--fucsia);}
+.about-text{font-family:var(--serif);font-size:0.88rem;color:rgba(255,255,255,0.45);line-height:1.85;font-style:italic;}
+.about-cta{margin-top:1.5rem;}
+.btn-outline-white{font-family:var(--sans);font-size:0.46rem;letter-spacing:0.22em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.22);padding:0.7rem 1.5rem;text-decoration:none;display:inline-block;transition:all 0.3s;}
+.btn-outline-white:hover{border-color:var(--fucsia);background:var(--fucsia);}
+
+/* PRINTS */
+.prints-strip{padding:4rem 2.5rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;}
+.prints-eyebrow{font-family:var(--sans);font-size:0.44rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--fucsia);margin-bottom:0.45rem;}
+.prints-title{font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.8rem);font-weight:300;}
+.prints-title em{font-style:italic;}
+.prints-desc{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:0.83rem;margin-top:0.35rem;line-height:1.6;}
+.prints-features{display:flex;gap:2rem;margin-top:1.4rem;flex-wrap:wrap;}
+.feat-val{font-family:var(--serif);font-size:1.1rem;color:var(--fucsia);}
+.feat-lbl{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.btn-fucsia{font-family:var(--sans);font-size:0.5rem;letter-spacing:0.22em;text-transform:uppercase;color:#fff;background:var(--fucsia);border:none;padding:0.9rem 2rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.3s;}
+.btn-fucsia:hover{background:var(--fucsia-dark);}
+
+/* FOOTER */
+footer{background:var(--text);padding:3rem 2.5rem 2rem;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.07);}
+.footer-logo{font-family:var(--sans);font-size:0;text-transform:uppercase;color:#fff;text-decoration:none;display:flex;align-items:baseline;}
+.footer-logo .logo-j,.footer-logo .logo-m{font-size:1rem;color:var(--fucsia);}
+.footer-logo .logo-ayro,.footer-logo .logo-ontesinos,.footer-logo .logo-space{font-size:0.38rem;letter-spacing:0.18em;color:rgba(255,255,255,0.5);}
+.footer-tagline{font-family:var(--serif);font-style:italic;color:rgba(255,255,255,0.25);font-size:0.78rem;margin-top:0.35rem;}
+.footer-socials{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+.soc-icon{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid rgba(255,255,255,0.1);text-decoration:none;transition:all 0.3s;color:rgba(255,255,255,0.3);}
+.soc-icon:hover{border-color:var(--fucsia);color:var(--fucsia);}
+.soc-icon svg{width:13px;height:13px;fill:currentColor;}
+.footer-bottom{padding-top:1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.1em;color:rgba(255,255,255,0.18);}
+.footer-copy a{color:var(--fucsia);text-decoration:none;}
+.footer-links{display:flex;gap:1.5rem;}
+.footer-link{font-family:var(--sans);font-size:0.4rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.18);text-decoration:none;transition:color 0.3s;}
+.footer-link:hover{color:var(--fucsia);}
+
+/* ADULT MODAL */
+#adult-modal{position:fixed;inset:0;z-index:800;background:rgba(0,0,0,0.82);display:none;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(4px);}
+#adult-modal.show{display:flex;}
+.adult-box{background:#fff;max-width:420px;width:100%;border-top:3px solid var(--fucsia);padding:2.5rem;text-align:center;}
+.adult-icon{font-size:1.8rem;margin-bottom:0.8rem;color:var(--fucsia);}
+.adult-title{font-family:var(--serif);font-size:1.45rem;font-style:italic;margin-bottom:0.45rem;}
+.adult-text{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:0.83rem;line-height:1.7;margin-bottom:1.5rem;}
+.adult-btns{display:flex;gap:0.5rem;}
+.btn-adult-yes{flex:1;font-family:var(--sans);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:#fff;background:var(--fucsia);border:none;padding:0.8rem;cursor:pointer;transition:background 0.3s;}
+.btn-adult-yes:hover{background:var(--fucsia-dark);}
+.btn-adult-no{flex:1;font-family:var(--sans);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--border);padding:0.8rem;cursor:pointer;transition:all 0.3s;}
+.btn-adult-no:hover{border-color:var(--text);color:var(--text);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.2rem;}
+  .nav-links{display:none;}
+  .hero-content{padding:2rem 1.2rem 3rem;}
+  .galleries-section{padding:3rem 1.2rem;}
+  .gallery-cards{grid-template-columns:1fr 1fr;}
+  .gallery-card:nth-child(4){grid-column:auto;margin-left:0;}
+  .gallery-card:nth-child(5){grid-column:auto;}
+  .about-strip{grid-template-columns:1fr;gap:2rem;padding:3rem 1.2rem;}
+  .prints-strip{padding:2.5rem 1.2rem;}
+  footer{padding:2.5rem 1.2rem 1.5rem;}
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-32J19QHKJN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-32J19QHKJN');
+</script>
+</head>
+<body>
+
+<!-- ADULT MODAL -->
+<div id="adult-modal">
+  <div class="adult-box">
+    <div class="adult-icon">◈</div>
+    <div class="adult-title" data-en="Artistic Nude Gallery" data-es="Galería Desnudo Artístico">Artistic Nude Gallery</div>
+    <p class="adult-text" data-en="This gallery contains fine art work of an intimate nature. By continuing you confirm you are 18 years of age or older." data-es="Esta galería contiene obra fine art de carácter íntimo. Al continuar confirmas que tienes 18 años o más.">This gallery contains fine art work of an intimate nature. By continuing you confirm you are 18 years of age or older.</p>
+    <div class="adult-btns">
+      <button class="btn-adult-yes" onclick="enterAdult()" data-en="I am 18+ · Enter" data-es="Tengo 18+ · Entrar">I am 18+ · Enter</button>
+      <button class="btn-adult-no" onclick="closeAdult()" data-en="Go back" data-es="Volver">Go back</button>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER POPUP -->
+<div id="nl-overlay">
+  <div class="nl-box">
+    <button class="nl-close" onclick="closeNL()">×</button>
+    <div class="nl-top">
+      <div class="nl-eyebrow" data-en="Collectors & Art Lovers" data-es="Coleccionistas y amantes del arte">Collectors & Art Lovers</div>
+      <div class="nl-title" data-en="Join the <em>inner circle</em>" data-es="Únete al <em>círculo privado</em>">Join the <em>inner circle</em></div>
+    </div>
+    <div class="nl-body">
+      <p class="nl-desc" data-en="Be the first to know about new limited edition prints, private exhibitions and exclusive collector offers." data-es="Sé el primero en conocer nuevas impresiones en edición limitada, exposiciones privadas y ofertas exclusivas para coleccionistas.">Be the first to know about new limited edition prints, private exhibitions and exclusive collector offers.</p>
+      <div class="ml-embedded-wrap">
+        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/982379/forms/189504413519316471/subscribe" data-code="" method="post" target="ml-hidden-frame" onsubmit="showMLSuccess()">
+          <div class="ml-form-fieldRow">
+            <input aria-label="email" aria-required="true" type="email" class="nl-input-ml" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email" required>
+          </div>
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+          <button type="submit" class="btn-nl" data-en="Subscribe — Exclusive access" data-es="Suscribirse — Acceso exclusivo">Subscribe — Exclusive access</button>
+        </form>
+        <div class="nl-ok show" id="nl-ok" style="display:none">Welcome to the circle. Check your inbox.</div>
+      </div>
+      <span class="nl-skip" onclick="closeNL()" data-en="No thanks, continue browsing" data-es="No gracias, seguir viendo">No thanks, continue browsing</span>
+      <iframe name="ml-hidden-frame" style="display:none" title="newsletter"></iframe>
+      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a class="nav-logo" href="index.html">
+    <span class="logo-j">J</span><span class="logo-ayro">ayro</span>
+    <span class="logo-space">&nbsp;</span>
+    <span class="logo-m">M</span><span class="logo-ontesinos">ontesinos</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="#galleries" data-en="Galleries" data-es="Galerías">Galleries</a>
+    <a class="nav-link" href="bio.html" data-en="Bio" data-es="Bio">Bio</a>
+    <a class="nav-link" href="libros.html" data-en="Books" data-es="Libros">Books</a>
+    <a class="nav-link" href="mailto:jayromontesinos@gmail.com" data-en="Contact" data-es="Contacto">Contact</a>
+  </div>
+  <div class="lang-wrap">
+    <button class="lang-btn on" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img class="hero-bg-img" src="imagenes/portada.jpg" alt="Jayro Montesinos Fine Art Photography">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow" data-en="Fine Art Photography · Valencia, Spain" data-es="Fotografía Fine Art · Valencia, España">Fine Art Photography · Valencia, Spain</p>
+    <h1 class="hero-name">Jayro <em>Montesinos</em></h1>
+    <p class="hero-sub" data-en="Exploring light, form and the quiet poetry of the body. Limited edition fine art prints on Hahnemühle paper — signed, numbered, certified." data-es="Explorando la luz, la forma y la poesía silenciosa del cuerpo. Impresiones fine art en edición limitada sobre papel Hahnemühle — firmadas, numeradas, certificadas.">Exploring light, form and the quiet poetry of the body. Limited edition fine art prints on Hahnemühle paper — signed, numbered, certified.</p>
+    <div class="hero-cta">
+      <a class="btn-hero" href="#galleries" data-en="View galleries" data-es="Ver galerías">View galleries</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-txt">scroll</span>
+  </div>
+</section>
+
+<!-- GALLERIES -->
+<section class="galleries-section" id="galleries">
+  <div class="section-header">
+    <p class="section-eyebrow" data-en="Portfolio" data-es="Portfolio">Portfolio</p>
+    <h2 class="section-title" data-en="Selected <em>Works</em>" data-es="Obras <em>Seleccionadas</em>">Selected <em>Works</em></h2>
+    <p class="section-desc" data-en="Seven bodies of work. Each a different conversation with light." data-es="Siete líneas de trabajo. Cada una, una conversación distinta con la luz.">Five bodies of work. Each a different conversation with light.</p>
+  </div>
+  <div class="gallery-cards">
+
+    <a class="gallery-card" href="bio.html">
+      <img class="card-img" src="imagenes/bio/jayro-bio.jpg" alt="Biography">
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-num">01 / 07</div>
+        <div class="card-title" data-en="Biography" data-es="Biografía">Biography</div>
+        <div class="card-sub" data-en="The artist · His story" data-es="El artista · Su historia">The artist · His story</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="5,5 19,5 19,19"/></svg></div>
+    </a>
+
+    <a class="gallery-card" href="campanas.html">
+      <img class="card-img" src="imagenes/campanas/campana-01.jpg" alt="Campaigns">
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-num">02 / 07</div>
+        <div class="card-title" data-en="Estudio Mediterráneo" data-es="Estudio Mediterráneo">Estudio Mediterráneo</div>
+        <div class="card-sub" data-en="Commercial · Editorial" data-es="Comercial · Editorial">Commercial · Editorial</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="5,5 19,5 19,19"/></svg></div>
+    </a>
+
+    <a class="gallery-card" href="libros.html">
+      <img class="card-img" src="imagenes/libros/libro-01.jpg" alt="Books">
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-num">03 / 07</div>
+        <div class="card-title" data-en="Books" data-es="Libros">Books</div>
+        <div class="card-sub" data-en="Publications · Editions" data-es="Publicaciones · Ediciones">Publications · Editions</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="5,5 19,5 19,19"/></svg></div>
+    </a>
+
+    <a class="gallery-card" href="danza.html">
+      <img class="card-img" src="imagenes/danza/danza-01.jpg" alt="Dance">
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-num">04 / 07</div>
+        <div class="card-title" data-en="Dance" data-es="Danza">Dance</div>
+        <div class="card-sub" data-en="Movement · Expression" data-es="Movimiento · Expresión">Movement · Expression</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="5,5 19,5 19,19"/></svg></div>
+    </a>
+
+    <a class="gallery-card" href="retratos.html">
+      <img class="card-img" src="imagenes/retratos/retrato-01.jpg" alt="Portraits">
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-num">05 / 07</div>
+        <div class="card-title" data-en="Portraits" data-es="Retratos">Portraits</div>
+        <div class="card-sub" data-en="Fine Art · Identity" data-es="Fine Art · Identidad">Fine Art · Identity</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="5,5 19,5 19,19"/></svg></div>
+    </a>
+
+    <a class="gallery-card" href="stilllife.html">
+      <img class="card-img" src="imagenes/stilllife/stilllife-01.jpg" alt="Still Life">
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-num">06 / 07</div>
+        <div class="card-title" data-en="Still Life" data-es="Naturaleza Muerta">Still Life</div>
+        <div class="card-sub" data-en="Objects · Light · Silence" data-es="Objetos · Luz · Silencio">Objects · Light · Silence</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="5,5 19,5 19,19"/></svg></div>
+    </a>
+
+    <a class="gallery-card" href="#" onclick="showAdult(event)">
+      <img class="card-img" src="imagenes/desnudos/desnudo-01.jpg" alt="Artistic Nude">
+      <div class="card-overlay"></div>
+      <span class="adult-badge">18+</span>
+      <div class="card-content">
+        <div class="card-num">07 / 07</div>
+        <div class="card-title" data-en="Artistic Nude" data-es="Desnudo Artístico">Artistic Nude</div>
+        <div class="card-sub" data-en="Fine Art · Limited prints" data-es="Fine Art · Impresiones limitadas">Fine Art · Limited prints</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="5,5 19,5 19,19"/></svg></div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-strip">
+  <div class="about-quote" data-en='"Light does not illuminate — it <span>reveals</span>."' data-es='"La luz no ilumina — <span>revela</span>."'>"Light does not illuminate — it <span>reveals</span>."</div>
+  <div>
+    <p class="about-text" data-en="Based in Valencia, Jayro Montesinos works at the intersection of fine art and intimate photography. Each image is a slow, deliberate study of form, shadow and presence." data-es="Afincado en Valencia, Jayro Montesinos trabaja en la intersección entre el arte y la fotografía íntima. Cada imagen es un estudio lento y deliberado de forma, sombra y presencia.">Based in Valencia, Jayro Montesinos works at the intersection of fine art and intimate photography. Each image is a slow, deliberate study of form, shadow and presence.</p>
+    <div class="about-cta">
+      <a class="btn-outline-white" href="bio.html" data-en="Read biography" data-es="Leer biografía">Read biography</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRINTS -->
+<section class="prints-strip">
+  <div>
+    <p class="prints-eyebrow" data-en="Collect" data-es="Coleccionar">Collect</p>
+    <h3 class="prints-title" data-en="Limited Edition <em>Prints</em>" data-es="Impresiones <em>Edición Limitada</em>">Limited Edition <em>Prints</em></h3>
+    <p class="prints-desc" data-en="Hahnemühle Fine Art · Mineral pigment ink · Signed & numbered · Certificate of authenticity" data-es="Papel Hahnemühle Fine Art · Tinta pigmento mineral · Firmadas y numeradas · Certificado de autenticidad">Hahnemühle Fine Art · Mineral pigment ink · Signed & numbered · Certificate of authenticity</p>
+    <div class="prints-features">
+      <div><span class="feat-val">300 €</span><br><span class="feat-lbl" data-en="from" data-es="desde">from</span></div>
+      <div><span class="feat-val">Intl.</span><br><span class="feat-lbl" data-en="shipping" data-es="envío">shipping</span></div>
+      <div><span class="feat-val">24h</span><br><span class="feat-lbl" data-en="PayPal invoice" data-es="factura PayPal">PayPal invoice</span></div>
+    </div>
+  </div>
+  <a class="btn-fucsia" href="https://www.amazon.com/Jayro-Montesinos/dp/B0H242CNQC/" target="_blank" rel="noopener" data-en="Enquire about prints" data-es="Consultar impresiones">Enquire about prints</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a class="footer-logo" href="index.html">
+        <span class="logo-j">J</span><span class="logo-ayro">ayro</span>
+        <span class="logo-space">&nbsp;</span>
+        <span class="logo-m">M</span><span class="logo-ontesinos">ontesinos</span>
+      </a>
+      <p class="footer-tagline" data-en="Fine Art Photography · Valencia, Spain" data-es="Fotografía Fine Art · Valencia, España">Fine Art Photography · Valencia, Spain</p>
+    </div>
+    <div class="footer-socials">
+      <a class="soc-icon" href="https://www.instagram.com/jayromontesinosphotographer?igsh=MXI5a204eWY0bjk5NQ==" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+      </a>
+      <a class="soc-icon" href="https://www.tiktok.com/@jayromontesinos?_r=1&_t=ZN-96mQgiBE47K" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.13 6.33 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg>
+      </a>
+      <a class="soc-icon" href="https://www.facebook.com/share/1LhkcGqHmp/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a class="soc-icon" href="mailto:jayromontesinos@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 <a href="index.html">Jayro Montesinos</a> · Private studio by appointment · Valencia, Spain</p>
+    <div class="footer-links">
+      <a class="footer-link" href="mailto:jayromontesinos@gmail.com" data-en="Contact" data-es="Contacto">Contact</a>
+      <a class="footer-link" href="privacidad.html" data-en="Privacy" data-es="Privacidad">Privacy</a>
+      <a class="footer-link" href="devoluciones.html" data-en="Returns" data-es="Devoluciones">Returns</a>
+      <a class="footer-link" href="aviso-legal.html" data-en="Legal" data-es="Aviso Legal">Legal</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+let lang = 'en';
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('on', b.textContent.toLowerCase() === l));
+  document.querySelectorAll('[data-en]').forEach(el => { const t = el.getAttribute('data-' + l); if (t) el.innerHTML = t; });
+}
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+function showAdult(e) { e.preventDefault(); document.getElementById('adult-modal').classList.add('show'); }
+function enterAdult() { window.location.href = 'desnudo-artistico.html'; }
+function closeAdult() { document.getElementById('adult-modal').classList.remove('show'); }
+function showNL() {
+  if (sessionStorage.getItem('nl-shown')) return;
+  sessionStorage.setItem('nl-shown', '1');
+  document.getElementById('nl-overlay').classList.add('show');
+}
+function closeNL() { document.getElementById('nl-overlay').classList.remove('show'); }
+function showMLSuccess() {
+  const form = document.querySelector('.ml-block-form');
+  const ok = document.getElementById('nl-ok');
+  form.style.display = 'none';
+  ok.textContent = lang === 'es' ? 'Bienvenido al círculo. Revisa tu bandeja.' : 'Welcome to the circle. Check your inbox.';
+  ok.style.display = 'block';
+  ok.classList.add('show');
+  setTimeout(closeNL, 3000);
+}
+function submitNL() {
+  const email = document.getElementById('nl-email').value;
+  if (!email) { alert(lang === 'es' ? 'Por favor introduce tu email.' : 'Please enter your email.'); return; }
+  const ok = document.getElementById('nl-ok');
+  ok.textContent = lang === 'es' ? 'Bienvenido al círculo. Revisa tu bandeja.' : 'Welcome to the circle. Check your inbox.';
+  ok.classList.add('show');
+  setTimeout(closeNL, 2500);
+}
+setTimeout(showNL, 6000);
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+</body>
+</html>

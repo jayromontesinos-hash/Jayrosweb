@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portraits — Jayro Montesinos</title>
+<title>Fine Art Portrait Photography Valencia — Jayro Montesinos</title>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-32J19QHKJN"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-32J19QHKJN');</script>
@@ -92,6 +92,9 @@ footer{background:var(--text);padding:2rem 2.5rem;margin-top:2rem;}
   <h1 data-en="<em>Portraits</em>" data-es="<em>Retratos</em>"><em>Portraits</em></h1>
   <p class="page-desc" data-en="Fine art portrait photography. The face as landscape — light, identity and presence." data-es="Fotografía de retrato fine art. El rostro como paisaje — luz, identidad y presencia.">Fine art portrait photography. The face as landscape — light, identity and presence.</p>
 </div>
+<section class="seo-desc" style="padding:1rem 2.5rem 0;max-width:700px;margin:0 auto;">
+  <p style="font-family:var(--serif);font-style:italic;color:var(--muted);font-size:0.9rem;line-height:1.8;" data-en="Fine art portrait photography. The face as landscape — light, identity and presence captured in black and white." data-es="Fotografía de retrato fine art. El rostro como paisaje — luz, identidad y presencia capturados en blanco y negro.">Fine art portrait photography. The face as landscape — light, identity and presence captured in black and white.</p>
+</section>
 <section class="gallery-section">
   <div class="masonry" id="masonry"></div>
 </section>
@@ -131,7 +134,7 @@ function build(){
     div.className='masonry-item';
     div.onclick=()=>openLB(i);
     const priceHtml=p.price?`<div class="photo-price">${p.price}</div>`:'';
-    div.innerHTML=`<img src="${p.src}" alt="${p.title}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
+    div.innerHTML=`<img src="${p.src}" alt="fine art portrait photography black and white Jayro Montesinos Valencia ${i+1}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
     m.appendChild(div);
   });
 }

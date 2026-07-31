@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Still Life — Jayro Montesinos</title>
+<title>Fine Art Still Life Photography Valencia — Jayro Montesinos</title>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-32J19QHKJN"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-32J19QHKJN');</script>
@@ -92,6 +92,9 @@ footer{background:var(--text);padding:2rem 2.5rem;margin-top:2rem;}
   <h1 data-en="<em>Still Life</em>" data-es="<em>Naturaleza Muerta</em>"><em>Still Life</em></h1>
   <p class="page-desc" data-en="Fine art still life photography. Objects, light and silence." data-es="Fotografía de naturaleza muerta fine art. Objetos, luz y silencio.">Fine art still life photography. Objects, light and silence.</p>
 </div>
+<section class="seo-desc" style="padding:1rem 2.5rem 0;max-width:700px;margin:0 auto;">
+  <p style="font-family:var(--serif);font-style:italic;color:var(--muted);font-size:0.9rem;line-height:1.8;" data-en="Fine art still life photography. Objects, light and silence — the extraordinary beauty hidden in everyday forms." data-es="Fotografía de naturaleza muerta fine art. Objetos, luz y silencio — la extraordinaria belleza oculta en las formas cotidianas.">Fine art still life photography. Objects, light and silence — the extraordinary beauty hidden in everyday forms.</p>
+</section>
 <section class="gallery-section">
   <div class="masonry" id="masonry"></div>
 </section>
@@ -125,7 +128,7 @@ function build(){
     div.className='masonry-item';
     div.onclick=()=>openLB(i);
     const priceHtml=p.price?`<div class="photo-price">${p.price}</div>`:'';
-    div.innerHTML=`<img src="${p.src}" alt="${p.title}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
+    div.innerHTML=`<img src="${p.src}" alt="fine art still life photography Jayro Montesinos Valencia ${i+1}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
     m.appendChild(div);
   });
 }

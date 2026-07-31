@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dance — Jayro Montesinos</title>
+<title>Fine Art Dance Photography Valencia — Jayro Montesinos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://www.jayromontesinos.com/danza.html">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{--fucsia:#ff0080;--fucsia-dark:#cc0066;--text:#111;--muted:#777;--border:#e8e8e8;--bg2:#f9f9f9;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Montserrat',sans-serif;}
@@ -95,6 +94,9 @@ footer{background:var(--text);padding:2rem 2.5rem;margin-top:2rem;}
   <h1 data-en="<em>Dance</em>" data-es="<em>Danza</em>"><em>Dance</em></h1>
   <p class="page-desc" data-en="Fine art dance photography. The body in motion — between form and feeling." data-es="Fotografía de danza fine art. El cuerpo en movimiento — entre la forma y el sentimiento.">Fine art dance photography. The body in motion — between form and feeling.</p>
 </div>
+<section class="seo-desc" style="padding:1rem 2.5rem 0;max-width:700px;margin:0 auto;">
+  <p style="font-family:var(--serif);font-style:italic;color:var(--muted);font-size:0.9rem;line-height:1.8;" data-en="Black and white fine art dance photography captured in studio. Movement as sculpture — strength, grace and the language of the body." data-es="Fotografía de danza fine art en blanco y negro capturada en estudio. El movimiento como escultura — fuerza, gracia y el lenguaje del cuerpo.">Black and white fine art dance photography captured in studio. Movement as sculpture — strength, grace and the language of the body.</p>
+</section>
 <section class="gallery-section">
   <div class="masonry" id="masonry"></div>
 </section>
@@ -146,7 +148,7 @@ function build(){
     div.className='masonry-item';
     div.onclick=()=>openLB(i);
     const priceHtml=p.price?`<div class="photo-price">${p.price}</div>`:'';
-    div.innerHTML=`<img src="${p.src}" alt="${p.title}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
+    div.innerHTML=`<img src="${p.src}" alt="fine art dance photography black and white Jayro Montesinos Valencia ${i+1}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
     m.appendChild(div);
   });
 }

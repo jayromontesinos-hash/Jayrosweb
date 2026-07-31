@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artistic Nude — Jayro Montesinos</title>
+<title>Fine Art Nude Photography Valencia — Jayro Montesinos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -94,6 +94,9 @@ footer{background:var(--text);padding:2rem 2.5rem;margin-top:2rem;}
   <h1 data-en="<em>Artistic Nude</em>" data-es="<em>Desnudo Artístico</em>"><em>Artistic Nude</em></h1>
   <p class="page-desc" data-en="Fine art nude photography. Limited edition prints on Hahnemühle paper — signed, numbered, certified." data-es="Fotografía de desnudo artístico fine art. Impresiones en edición limitada sobre papel Hahnemühle — firmadas, numeradas, certificadas.">Fine art nude photography. Limited edition prints on Hahnemühle paper — signed, numbered, certified.</p>
 </div>
+<section class="seo-desc" style="padding:1rem 2.5rem 0;max-width:700px;margin:0 auto;">
+  <p style="font-family:var(--serif);font-style:italic;color:var(--muted);font-size:0.9rem;line-height:1.8;" data-en="Fine art nude photography exploring the human body as landscape — light, form and the quiet poetry of skin. Limited edition prints on Hahnemühle paper, signed and numbered." data-es="Fotografía de desnudo artístico que explora el cuerpo humano como paisaje — luz, forma y la poesía silenciosa de la piel. Impresiones de edición limitada sobre papel Hahnemühle, firmadas y numeradas.">Fine art nude photography exploring the human body as landscape — light, form and the quiet poetry of skin. Limited edition prints on Hahnemühle paper, signed and numbered.</p>
+</section>
 <section class="gallery-section">
   <div class="masonry" id="masonry"></div>
 </section>
@@ -178,7 +181,7 @@ function build(){
     div.className='masonry-item';
     div.onclick=()=>openLB(i);
     const priceHtml=p.price?`<div class="photo-price">${p.price}</div>`:'';
-    div.innerHTML=`<img src="${p.src}" alt="${p.title}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
+    div.innerHTML=`<img src="${p.src}" alt="fine art nude photography black and white artistic Jayro Montesinos Valencia ${i+1}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
     m.appendChild(div);
   });
 }

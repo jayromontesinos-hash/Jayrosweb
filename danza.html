@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fine Art Dance Photography Valencia — Jayro Montesinos</title>
+<title>Dance — Jayro Montesinos</title>
+<link rel="canonical" href="https://jayromontesinos.com/danza">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -82,7 +83,6 @@ footer{background:var(--text);padding:2rem 2.5rem;margin-top:2rem;}
     <a class="nav-link" href="index.html#galleries" data-en="Galleries" data-es="Galerías">Galleries</a>
     <a class="nav-link" href="bio.html" data-en="Bio" data-es="Bio">Bio</a>
     <a class="nav-link" href="mailto:jayromontesinos@gmail.com" data-en="Contact" data-es="Contacto">Contact</a>
-    <a class="nav-link" href="prensa.html" data-en="Press" data-es="Prensa">Prensa</a>
   </div>
   <div class="lang-wrap">
     <button class="lang-btn on" onclick="setLang('en')">EN</button>
@@ -95,9 +95,6 @@ footer{background:var(--text);padding:2rem 2.5rem;margin-top:2rem;}
   <h1 data-en="<em>Dance</em>" data-es="<em>Danza</em>"><em>Dance</em></h1>
   <p class="page-desc" data-en="Fine art dance photography. The body in motion — between form and feeling." data-es="Fotografía de danza fine art. El cuerpo en movimiento — entre la forma y el sentimiento.">Fine art dance photography. The body in motion — between form and feeling.</p>
 </div>
-<section class="seo-desc" style="padding:1rem 2.5rem 0;max-width:700px;margin:0 auto;">
-  <p style="font-family:var(--serif);font-style:italic;color:var(--muted);font-size:0.9rem;line-height:1.8;" data-en="Black and white fine art dance photography captured in studio. Movement as sculpture — strength, grace and the language of the body." data-es="Fotografía de danza fine art en blanco y negro capturada en estudio. El movimiento como escultura — fuerza, gracia y el lenguaje del cuerpo.">Black and white fine art dance photography captured in studio. Movement as sculpture — strength, grace and the language of the body.</p>
-</section>
 <section class="gallery-section">
   <div class="masonry" id="masonry"></div>
 </section>
@@ -110,37 +107,37 @@ footer{background:var(--text);padding:2rem 2.5rem;margin-top:2rem;}
 <script>
 let lang='en',lbIdx=0;
 const photos=[
-   {src:'imagenes/danza/dance-acrobat-arm-extension..jpg',title:'Dance Acrobat Arm Extension'},
-  {src:'imagenes/danza/dance-acrobat-back-arch.jpg',title:'Dance Acrobat Back Arch'},
-  {src:'imagenes/danza/dance-acrobat-balance.jpg',title:'Dance Acrobat Balance'},
-  {src:'imagenes/danza/dance-acrobat-body-torsion.jpg',title:'Dance Acrobat Body Torsion'},
-  {src:'imagenes/danza/dance-acrobat-cirque-du-soleil.jpg',title:'Dance Acrobat Cirque Du Soleil'},
-  {src:'imagenes/danza/dance-acrobat-contortion.jpg',title:'Dance Acrobat Contortion'},
-  {src:'imagenes/danza/dance-acrobat-flexibility.jpg',title:'Dance Acrobat Flexibility'},
-  {src:'imagenes/danza/dance-acrobat-head-flexion..jpg',title:'Dance Acrobat Head Flexion'},
-  {src:'imagenes/danza/dance-acrobat-incline.jpg',title:'Dance Acrobat Incline'},
-  {src:'imagenes/danza/dance-black-white-pointe-shoes.jpg',title:'Dance Black White Pointe Shoes'},
-  {src:'imagenes/danza/dance-copper-wire-abstract.jpg',title:'Dance Copper Wire Abstract'},
-  {src:'imagenes/danza/dance-copper-wire-coiled-body.jpg',title:'Dance Copper Wire Coiled Body'},
-  {src:'imagenes/danza/dance-copper-wire-crossed-legs.jpg',title:'Dance Copper Wire Crossed Legs'},
-  {src:'imagenes/danza/dance-copper-wire-floor-pose.jpg',title:'Dance Copper Wire Floor Pose'},
-  {src:'imagenes/danza/dance-copper-wire-kneeling.jpg',title:'Dance Copper Wire Kneeling'},
-  {src:'imagenes/danza/dance-copper-wire-leg.jpg',title:'Dance Copper Wire Leg'},
-  {src:'imagenes/danza/dance-copper-wire-movement.jpg',title:'Dance Copper Wire Movement'},
-  {src:'imagenes/danza/dance-copper-wire-standing-pose.jpg',title:'Dance Copper Wire Standing Pose'},
-  {src:'imagenes/danza/dance-inner-journey-blue-trunk-1.jpg',title:'Dance Inner Journey Blue Trunk'},
-  {src:'imagenes/danza/dance-inner-journey-calm-pose.jpg',title:'Dance Inner Journey Calm Pose'},
-  {src:'imagenes/danza/dance-inner-journey-curled-figure.jpg',title:'Dance Inner Journey Curled Figure'},
-  {src:'imagenes/danza/dance-inner-journey-introspection.jpg',title:'Dance Inner Journey Introspection'},
-  {src:'imagenes/danza/dance-inner-journey-kneeling-emotion.jpg',title:'Dance Inner Journey Kneeling Emotion'},
-  {src:'imagenes/danza/dance-inner-journey-reaching-pose.jpg',title:'Dance Inner Journey Reaching Pose'},
-  {src:'imagenes/danza/dance-inner-journey-seated-reflection.jpg',title:'Dance Inner Journey Seated Reflection'},
-  {src:'imagenes/danza/dance-inner-journey-solitude.jpg',title:'Dance Inner Journey Solitude'},
-  {src:'imagenes/danza/dance-inner-journey-stretched-pose.jpg',title:'Dance Inner Journey Stretched Pose'},
-  {src:'imagenes/danza/dance-inner-journey-surrender.jpg',title:'Dance Inner Journey Surrender'},
-  {src:'imagenes/danza/dance-inner-journey-vulnerability.jpg',title:'Dance Inner Journey Vulnerability'},
-  {src:'imagenes/danza/dance-underground-jump-air.jpg',title:'Dance Underground Jump Air'},
-  {src:'imagenes/danza/dance-underground-movement.jpg',title:'Dance Underground Movement'},
+  {src:'imagenes/danza/danza-01.jpg',title:'Dance 01'},
+  {src:'imagenes/danza/danza-02.jpg',title:'Dance 02'},
+  {src:'imagenes/danza/danza-03.jpg',title:'Dance 03'},
+  {src:'imagenes/danza/danza-04.jpg',title:'Dance 04'},
+  {src:'imagenes/danza/danza-05.jpg',title:'Dance 05'},
+  {src:'imagenes/danza/danza-06.jpg',title:'Dance 06'},
+  {src:'imagenes/danza/danza-07.jpg',title:'Dance 07'},
+  {src:'imagenes/danza/danza-08.jpg',title:'Dance 08'},
+  {src:'imagenes/danza/danza-09.jpg',title:'Dance 09'},
+  {src:'imagenes/danza/danza-10.jpg',title:'Dance 10'},
+  {src:'imagenes/danza/danza-11.jpg',title:'Dance 11'},
+  {src:'imagenes/danza/danza-12.jpg',title:'Dance 12'},
+  {src:'imagenes/danza/danza-13.jpg',title:'Dance 13'},
+  {src:'imagenes/danza/danza-14.jpg',title:'Dance 14'},
+  {src:'imagenes/danza/danza-15.jpg',title:'Dance 15'},
+  {src:'imagenes/danza/danza-16.jpg',title:'Dance 16'},
+  {src:'imagenes/danza/danza-17.jpg',title:'Dance 17'},
+  {src:'imagenes/danza/danza-18.jpg',title:'Dance 18'},
+  {src:'imagenes/danza/danza-19.jpg',title:'Dance 19'},
+  {src:'imagenes/danza/danza-20.jpg',title:'Dance 20'},
+  {src:'imagenes/danza/danza-21.jpg',title:'Dance 21'},
+  {src:'imagenes/danza/danza-22.jpg',title:'Dance 22'},
+  {src:'imagenes/danza/danza-23.jpg',title:'Dance 23'},
+  {src:'imagenes/danza/danza-24.jpg',title:'Dance 24'},
+  {src:'imagenes/danza/danza-25.jpg',title:'Dance 25'},
+  {src:'imagenes/danza/danza-26.jpg',title:'Dance 26'},
+  {src:'imagenes/danza/danza-27.jpg',title:'Dance 27'},
+  {src:'imagenes/danza/danza-28.jpg',title:'Dance 28'},
+  {src:'imagenes/danza/danza-29.jpg',title:'Dance 29'},
+  {src:'imagenes/danza/danza-30.jpg',title:'Dance 30'},
+  {src:'imagenes/danza/danza-31.jpg',title:'Dance 31'},
 ];
 function build(){
   const m=document.getElementById('masonry');
@@ -149,7 +146,7 @@ function build(){
     div.className='masonry-item';
     div.onclick=()=>openLB(i);
     const priceHtml=p.price?`<div class="photo-price">${p.price}</div>`:'';
-    div.innerHTML=`<img src="${p.src}" alt="fine art dance photography black and white Jayro Montesinos Valencia ${i+1}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
+    div.innerHTML=`<img src="${p.src}" alt="${p.title}" loading="lazy"><div class="masonry-overlay"><div class="photo-title">${p.title}</div>${priceHtml}</div>`;
     m.appendChild(div);
   });
 }

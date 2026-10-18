@@ -76,11 +76,10 @@ nav.scrolled .lang-btn{color:#bbb;}
 .lang-btn.on{color:var(--fucsia);}
 .lang-sep{color:rgba(255,255,255,0.18);font-size:0.44rem;}
 nav.scrolled .lang-sep{color:#ddd;}
-
-/* HERO */
 .hero{position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:#1a1a1a;}
-.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:0.75;}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;opacity:0.75;}
+@media (max-width:768px){.hero-bg-img{object-position:46% center;}}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.25) 55%,rgba(0,0,0,0.15) 100%);}
 .hero-content{position:relative;z-index:2;padding:3rem 2.5rem 4.5rem;max-width:700px;}
 .hero-eyebrow{font-family:var(--sans);font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--fucsia);margin-bottom:1rem;opacity:0;animation:fadeUp 0.8s 0.3s forwards;}
@@ -216,7 +215,7 @@ footer{background:var(--text);padding:3rem 2.5rem 2rem;}
       "jobTitle": "Fine Art Photographer",
       "description": "Fine art photographer based in Valencia, Spain. Artistic nude, dance, portraits, still life and editorial photography. Limited edition fine art prints.",
       "url": "https://jayromontesinos.com/",
-      "image": "https://jayromontesinos.com/imagenes/portada.jpg",
+      "image": "https://jayromontesinos.com/imagenes/portada-horizontal.jpg",
       "email": "jayromontesinos@gmail.com",
       "homeLocation": {
         "@type": "Place",
@@ -310,8 +309,11 @@ footer{background:var(--text);padding:3rem 2.5rem 2rem;}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <img class="hero-bg-img" src="imagenes/portada.jpg" alt="Jayro Montesinos Fine Art Photography">
-  </div>
+  <picture>
+    <source media="(max-width: 768px)" srcset="imagenes/portada-vertical.jpg">
+    <img class="hero-bg-img" src="imagenes/portada-horizontal.jpg" alt="Jayro Montesinos Fine Art Photography">
+  </picture>
+</div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow" data-en="Fine Art Photography · Valencia, Spain" data-es="Fotografía Fine Art · Valencia, España">Fine Art Photography · Valencia, Spain</p>
